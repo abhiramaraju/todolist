@@ -1,5 +1,6 @@
 // Task data
 let tasks = [];
+let filterStatus = 'all';  // Variable to store the current filter status
 
 // Function to add a new task
 const addTask = (task) => {
@@ -28,11 +29,25 @@ const editTask = (index) => {
   }
 };
 
+// Function to filter tasks by status
+const filterTasks = (status) => {
+  filterStatus = status;
+  renderTaskList();
+};
+
 // Function to render the task list
 const renderTaskList = () => {
   const taskList = document.getElementById('task-list');
   taskList.innerHTML = '';
-  tasks.forEach((task, index) => {
+
+  let filteredTasks = tasks;
+  if (filterStatus === 'completed') {
+    filteredTasks = tasks.filter(task => task.completed);
+  } else if (filterStatus === 'pending') {
+    filteredTasks = tasks.filter(task => !task.completed);
+  }
+
+  filteredTasks.forEach((task, index) => {
     const taskElement = document.createElement('div');
     taskElement.classList.add('task');
     if (task.completed) taskElement.classList.add('completed');
@@ -68,6 +83,27 @@ document.getElementById('task-list').addEventListener('click', (e) => {
     deleteTask(index);
   }
 });
+
+document.getElementById('all-btn').addEventListener('click', () => {
+  filterTasks('all');
+  setActiveButton('all-btn');
+});
+
+document.getElementById('completed-btn').addEventListener('click', () => {
+  filterTasks('completed');
+  setActiveButton('completed-btn');
+});
+
+document.getElementById('pending-btn').addEventListener('click', () => {
+  filterTasks('pending');
+  setActiveButton('pending-btn');
+});
+
+// Function to set the active button
+const setActiveButton = (buttonId) => {
+  document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+  document.getElementById(buttonId).classList.add('active');
+};
 
 // Initial render
 renderTaskList();
