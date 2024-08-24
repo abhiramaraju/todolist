@@ -1,103 +1,124 @@
 /* Global Styles */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9;
-  }
-  
-  .todo-container {
-    width: 80%;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  h1 {
-    font-weight: bold;
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  /* Form Styles */
-  #add-task-form {
-    margin-bottom: 20px;
-  }
-  
-  #task-input {
-    width: 100%;
-    height: 40px;
-    margin-bottom: 10px;
-    padding: 10px;
-    font-size: 18px;
-    border: 1px solid #ccc;
-  }
-  
-  #add-task-btn {
-    width: 100%;
-    height: 40px;
-    padding: 10px;
-    font-size: 18px;
-    background-color: #4CAF50;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  #add-task-btn:hover {
-    background-color: #3e8e41;
-  }
-  
-  /* Task List Styles */
-  #task-list {
-    margin-bottom: 20px;
-  }
-  
-  .task {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-  }
-  
-  .task:last-child {
-    border-bottom: none;
-  }
-  
-  .task span {
-    flex-grow: 1;
-    font-size: 18px;
-  }
-  
-  .task input[type="checkbox"] {
-    margin-right: 10px;
-  }
-  
-  .task.completed span {
-    text-decoration: line-through;
-    color: #999;
-  }
-  
-  .task button {
-    margin-left: 10px;
-    padding: 5px 10px;
-    font-size: 16px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .task button:hover {
-    background-color: #f0f0f0;
-  }
-  
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #5D4037; /* Dark Brown Text Color */
+  background-color: #FFF78A; /* Background Color */
+}
+
+.todo-container {
+  width: 80%;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #FFE382; /* Container Background Color */
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 10px;
+  background-color: #FFC47E; /* Header Background Color */
+  color: #5D4037; /* Text Color */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Form Styles */
+#add-task-form {
+  margin-bottom: 20px;
+}
+
+#task-input {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid #ddd; /* Input Border Color */
+}
+
+#add-task-btn {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  font-size: 18px;
+  background-color: #FFC47E; /* Button Background Color */
+  color: #5D4037; /* Button Text Color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#add-task-btn:hover {
+  background-color: #FFAD84; /* Button Hover Background Color */
+}
+
+/* Task List Styles */
+#task-list {
+  margin-bottom: 20px;
+}
+
+.task {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.task:last-child {
+  border-bottom: none;
+}
+
+.task span {
+  font-size: 18px;
+}
+
+.task button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  font-size: 16px;
+  background-color: #FFC47E; /* Button Background Color */
+  color: #5D4037; /* Button Text Color */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.task button:hover {
+  background-color: #FFAD84; /* Button Hover Background Color */
+}
+
+/* Filter Buttons Styles */
+#filter-container {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.filter-btn {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #FFC47E; /* Button Background Color */
+  color: #5D4037; /* Button Text Color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  flex: 1;
+}
+
+.filter-btn.active {
+  background-color: #FFAD84; /* Active Button Background Color */
+  color: #5D4037; /* Active Button Text Color */
+}
+
+.filter-btn:hover {
+  background-color: #FFAD84; /* Button Hover Background Color */
+}
